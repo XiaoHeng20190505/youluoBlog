@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>透明度叠加</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="body">
+            <span class="title">多层透明度 相加 会造成遮挡的效果(背景颜色为 filter drop-shadow 函数的效果)</span>
+        </div>
+        <div class="opacity1"></div>
+        <div class="opacity2"></div>
+        <div class="opacity3"></div>
+        <div class="opacity4"></div>
+    </div>
+</body>
+</html>
+<style>
+    html, body {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .container {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        margin-top: 10px;
+    }
+    .title {
+        position: absolute;
+        top: -100px;
+    }
+    .body {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(17, 211, 198, 0.8);
+        filter: hue-rotate(90deg) drop-shadow(0 0 10px rgba(17, 211, 198, 0.8));
+    }
+    .opacity1 {
+        width: 200px;
+        height: 100px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+    .opacity2 {
+        width: 200px;
+        height: 50px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+    .opacity3 {
+        width: 200px;
+        height: 25px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+    .opacity4 {
+        width: 200px;
+        height: 10px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+</style>
